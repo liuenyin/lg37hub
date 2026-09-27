@@ -4,9 +4,9 @@
 
 ## 配置
 
-当前 `config.json` 的 `enabled` 为 false，页面不显示占位角色，也不加载第三方渲染库。
+当前已启用三月七模型。站点所有者已确认作者允许个人非商业网页展示；来源与用途记录见 `model/ATTRIBUTION.md`。模型由本站同源托管，运行库按下述来源加载。
 
-拿到允许公开网页使用、托管和分发的模型后：
+以后替换为获准用于网页展示的模型时：
 
 1. 把模型完整文件夹放入本目录 `model/`，保留相对路径和文件名大小写。
 2. 配置 `model` 为 `./model/角色.model3.json`，`attributionUrl` 为作者来源页，调整 `name`、`greeting` 和 `messages`。
@@ -22,7 +22,7 @@
 - [Live2D Cubism Core](https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js)：从 Live2D 官方提供的运行库地址加载。Core 按其专有许可提供，不属于上述 MIT 许可；使用者需遵守 [Live2D 许可](https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_cn.html)。官方 URL 不含版本，更新后应复测。
 - 角色模型的授权独立于渲染库；代码仓库的 MIT 许可不自动覆盖三方模型。
 
-没有模型下载脚本，也不会热链已知禁止再分发的转载模型。
+站点不提供模型打包下载入口。模型文件不适用渲染库或站点代码的开源许可。
 
 ## 行为
 

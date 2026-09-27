@@ -173,10 +173,13 @@ class MarchCompanion extends HTMLElement {
     this.messageIndex = ((this.messageIndex ?? -1) + 1) % messages.length;
     this.say(messages[this.messageIndex]);
     this.expression();
+    if (this.model && !this.reduced.matches) this.model.motion('Tap', 0, 3).catch(() => {});
   }
   expression() {
     if (!this.model?.internalModel.motionManager.expressionManager) return;
-    this.model.expression().then(() => {
+    const expressions = this.config.expressions || [];
+    this.expressionIndex = ((this.expressionIndex ?? -1) + 1) % Math.max(expressions.length, 1);
+    this.model.expression(expressions[this.expressionIndex]).then(() => {
       if (this.reduced.matches && this.model) { this.model.update(300); this.app?.render(); }
     }).catch(() => {});
   }
